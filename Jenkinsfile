@@ -11,8 +11,8 @@ pipeline {
         stage( 'my deploy' ) {
         agent {label 'service'} 
             steps {
-               sh 'sh /opt/tomcat/bin/shutdown.sh'
-               sh 'sh /opt/tomcat/bin/startup.sh' 
+               sh 'sudo sh /opt/tomcat/bin/shutdown.sh'
+               sh 'sudo sh /opt/tomcat/bin/startup.sh' 
             }
         }    
     }
