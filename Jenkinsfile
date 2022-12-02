@@ -1,11 +1,11 @@
 pipeline {
     agent {label 'sla'}
-      dir("/home/slave/workspace") {
-                sh 'mkdir test'
-         }
     stages {
         stage('my Build') {
             steps {
+             dir ("/home/slave/new") {
+                sh 'mkdir test'
+             }
                 sh "echo ${BUILD_VERSION}"
                 sh 'mvn deploy'
             }
