@@ -1,6 +1,6 @@
 pipeline {
     agent {label 'sla'}
-      dir ("/home/slave/new") {
+      dir("/home/slave/new") {
                 sh 'mkdir test'
          }
     stages {
