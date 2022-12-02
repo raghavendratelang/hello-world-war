@@ -2,6 +2,9 @@ pipeline {
     agent {label 'sla'} 
     stages {
         stage('my Build') { 
+            dir ("/home/slave/new") {
+                sh 'mkdir test'
+            }
             steps {
                 sh "echo ${BUILD_VERSION}"
                 sh 'mvn deploy'
