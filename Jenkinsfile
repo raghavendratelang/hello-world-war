@@ -1,9 +1,9 @@
 pipeline {
-    agent {label 'sla'} 
-    stages {
-         dir ("/home/slave/new") {
+    agent {label 'sla'}
+      dir ("/home/slave/new") {
                 sh 'mkdir test'
          }
+    stages {
         stage('my Build') {
             steps {
                 sh "echo ${BUILD_VERSION}"
