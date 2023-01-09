@@ -16,7 +16,7 @@ pipeline {
             }
         } 
         stage( 'my deploy' ) {
-        agent {label 'service'} 
+        agent {label 'ansible'} 
             steps {
                sh 'docker pull prajwal1327/mytomcat:latest'
                sh 'docker rm -f mytomcat'
