@@ -3,8 +3,8 @@
 <title>prajwal</title>
 </head>
 <body>
-	<h1>linux</h1>
-	<h2>shell script</h2>
+	<h1>docker</h1>
+	<h2>helm</h2>
 	<h2>github</h2>
 	<h2>maven</h2>
 	<h2>jenkins</h2>
