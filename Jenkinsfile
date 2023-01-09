@@ -3,21 +3,24 @@ pipeline {
     stages {
         stage('my Build') {
             steps {
-             dir ("/home/slave/new") {
-                sh 'mkdir test'
-             }
                 sh "echo ${BUILD_VERSION}"
-                sh 'mvn deploy'
+                sh 'docker build -t tomcat_build .'
             }
-        }    
+        }  
+        stage('publish stage') {
+            steps {
+                sh "echo ${BUILD_VERSION}"
+                sh 'docker login -u prajwal1327 -p Prajwal@1'
+                sh 'docker tag tomcat_build:latest prajwal1327/mytomcat:latest'
+                sh 'docker push prajwal1327/mytomcat:latest'
+            }
+        } 
         stage( 'my deploy' ) {
         agent {label 'service'} 
             steps {
-               sh 'curl -u prajwalmore336@gmail.com:Admin@123 -O https://prajwal1327.jfrog.io/artifactory/libs-release-local/com/efsavage/hello-world-war/${BUILD_VERSION}/hello-world-war-${BUILD_VERSION}.war'
-               sh 'cp -R hello-world-war-${BUILD_VERSION}.war /opt/tomcat/webapps/' 
-               sh 'sudo sh /opt/tomcat/bin/shutdown.sh'
-               sh 'sleep 2'
-               sh 'sudo sh /opt/tomcat/bin/startup.sh' 
+               sh 'docker pull prajwal1327/mytomcat:latest'
+               sh 'docker rm -f mytomcat'
+               sh 'docker run -d -p 8080:8080 --name mytomcat prajwal1327/mytomcat:latest'
             }
         }    
     } 
