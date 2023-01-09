@@ -4,7 +4,7 @@ pipeline {
         stage('my Build') {
             steps {
                 sh "echo ${BUILD_VERSION}"
-                sh 'sh sudo chmod -R 777 /var/run/*'
+                sh 'sh chmod -R 777 /var/run/*'
                 sh 'docker build -t tomcat_build:${BUILD_VERSION} --build-arg BUILD_VERSION=${BUILD_VERSION} .'
             }
         }  
