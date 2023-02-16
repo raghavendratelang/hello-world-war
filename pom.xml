@@ -4,7 +4,6 @@
 	<groupId>com.efsavage</groupId>
 	<artifactId>hello-world-war</artifactId>
 	<version>${BUILD_VERSION}</version>
-	<number>${BUILD_NUMBER}</number>
 	<packaging>war</packaging>
 	<name>Hello World Web Application Repository</name>
 	<description>Simplest possible Java Webapp</description>
