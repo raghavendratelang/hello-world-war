@@ -1,1 +1,11 @@
-
+pipeline {
+    agent {label 'build'}
+    stages {
+        stage('my Build') {
+            steps {
+                sh 'echo env='
+                sh 'docker build -t tomcat_build:${BUILD_VERSION} .'
+            }
+        }
+     }
+}
