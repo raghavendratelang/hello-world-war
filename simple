@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('my Build') {
             steps {
+                sh 'ls'
                 sh 'echo env='
                 sh 'docker build -t tomcat_build:${BUILD_VERSION} .'
             }
