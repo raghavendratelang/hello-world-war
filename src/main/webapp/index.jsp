@@ -16,7 +16,7 @@
     }
     
     h1 {
-      font-size: 28px;
+      font-size: 32px;
       color: #333333;
       margin: 0;
     }
@@ -30,7 +30,7 @@
       background-color: #ffffff;
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      width: 400px;
+      width: 600px;
       padding: 20px;
       margin: 0 auto;
     }
@@ -41,16 +41,27 @@
       margin-top: 0;
     }
     
-    ul {
-      padding: 0;
-      margin: 0;
-      list-style: none;
+    .item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
     }
     
-    li {
+    .item img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    
+    .item h3 {
+      font-size: 20px;
+      margin: 0;
+    }
+    
+    .item .price {
       font-size: 16px;
       color: #777777;
-      margin-bottom: 10px;
     }
   </style>
 </head>
@@ -62,15 +73,50 @@
   
   <div class="menu">
     <h2>Liquor Menu</h2>
-    <ul>
-      <li>Whiskey</li>
-      <li>Vodka</li>
-      <li>Rum</li>
-      <li>Gin</li>
-      <li>Tequila</li>
-      <li>Wine</li>
-      <li>Beer</li>
-    </ul>
-  </div>
-</body>
-</html>
+    
+    <div class="item">
+      <img src="whiskey.jpg" alt="Whiskey">
+      <div>
+        <h3>Whiskey</h3>
+        <p class="price">$10</p>
+      </div>
+    </div>
+    
+    <div class="item">
+      <img src="vodka.jpg" alt="Vodka">
+      <div>
+        <h3>Vodka</h3>
+        <p class="price">$8</p>
+      </div>
+    </div>
+    
+    <div class="item">
+      <img src="rum.jpg" alt="Rum">
+      <div>
+        <h3>Rum</h3>
+        <p class="price">$7</p>
+      </div>
+    </div>
+    
+    <div class="item">
+      <img src="gin.jpg" alt="Gin">
+      <div>
+        <h3>Gin</h3>
+        <p class="price">$9</p>
+      </div>
+    </div>
+    
+    <div class="item">
+      <img src="tequila.jpg" alt="Tequila">
+      <div>
+        <h3>Tequila</h3>
+        <p class="price">$12</p>
+      </div>
+    </div>
+    
+    <div class="item">
+      <img src="wine.jpg" alt="Wine">
+      <div>
+        <h3>Wine</h3>
+        <p class="price">$6</p>
+     
